@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar max-w-7xl mx-auto z-20 opacity-60 bg-[#15151580] text-white">
+      <div className="navbar max-w-7xl mx-auto z-50 opacity-60 bg-[#15151580] text-white mb-20">
         <div className="navbar justify-between  lg:mx-4 lg:px-0">
           <div className="navbar-start mt-3">
             <div className="dropdown">
@@ -78,7 +78,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="menu menu-sm dropdown-content   font-bold mt-3 z-[300] p-2 shadow bg-base-100 rounded-box w-52"
+                className="menu menu-sm dropdown-content   font-bold mt-3 z-50 p-2 shadow bg-base-100 rounded-box w-52"
               >
                 {links}
               </ul>

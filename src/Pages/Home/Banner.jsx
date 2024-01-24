@@ -18,7 +18,7 @@ const Banner = () => {
       onSwiper={(swiper) => console.log(swiper)}
       onSlideChange={() => console.log("slide change")}
     >
-      <SwiperSlide>
+      <SwiperSlide className="-z-40">
         <div className="mt-6 lg:mt-1  z-0 mx-auto background py-4 lg:py-0 lg:h-[80vh] grid justify-center items-center">
         <div className="mt-20 mb-20 lg:mb-0">
             <HashLink

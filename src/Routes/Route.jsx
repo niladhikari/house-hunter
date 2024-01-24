@@ -50,7 +50,7 @@ const router = createBrowserRouter([
       {
         path: "update/:id",
         element: <AdminRoute><UpdateHouse></UpdateHouse></AdminRoute>,
-        loader: ({ params }) =>fetch(`http://localhost:5000/menu/${params.id}`),
+        loader: ({ params }) =>fetch(`https://house-hunter-server-virid.vercel.app/menu/${params.id}`),
       },
       {
         path: "houseRenter",
