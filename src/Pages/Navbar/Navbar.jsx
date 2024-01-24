@@ -56,7 +56,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar   z-20 opacity-60 bg-[#15151580] text-white">
+      <div className="navbar max-w-7xl mx-auto z-20 opacity-60 bg-[#15151580] text-white">
         <div className="navbar justify-between  lg:mx-4 lg:px-0">
           <div className="navbar-start mt-3">
             <div className="dropdown">

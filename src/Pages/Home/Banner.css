@@ -1,0 +1,21 @@
+.background{
+    background-image: url("https://i.ibb.co/pj86R1R/pexels-photo-106399.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+.background2{
+    background-image: url("https://i.ibb.co/jRMJPcD/house.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
+.background3{
+    background-image: url("https://i.ibb.co/ZKdqsnP/photo-1613490493576-7fde63acd811.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: overlay;
+}
