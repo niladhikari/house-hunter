@@ -5,7 +5,7 @@ import useHouseOwner from "../../Hooks/useHouseOwner";
 
 const Navbar = () => {
   const { user, logOut } = useAuth();
-  const isHouseOwner = useHouseOwner();
+  const [isHouseOwner] = useHouseOwner();
 
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -22,12 +22,11 @@ const Navbar = () => {
             <NavLink to="/dashboard/ownerHome">Dashboard</NavLink>
           </li>
         )}
-        {/* {
-            user && isHouseOwner && <li><Link to="/dashboard/ownerHome">Dashboard</Link></li>
-        }
-        {
-            user && !isHouseOwner && <li><Link to="/dashboard/userHome">Dashboard</Link></li>
-        } */}
+        {user && !isHouseOwner && (
+          <li>
+            <NavLink to="/dashboard/houseRenter">Dashboard</NavLink>
+          </li>
+        )}
       </>
     </>
   );

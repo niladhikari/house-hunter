@@ -5,6 +5,7 @@ import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import useAxiosOpen from "../../Hooks/useAxiosOpen";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import useHouseOwner from './../../Hooks/useHouseOwner';
 
 const SignUp = () => {
   const {
@@ -16,6 +17,7 @@ const SignUp = () => {
   const { createUser, updateUserProfile } = useAuth();
   const navigate = useNavigate();
   const axios = useAxiosOpen();
+  const [isHouseOwner] = useHouseOwner();
 
   const onSubmit = (data) => {
     console.log(data);
@@ -42,7 +44,12 @@ const SignUp = () => {
                 showConfirmButton: false,
                 timer: 1500,
               });
-              navigate("/");
+              {
+                isHouseOwner && ( navigate('/dashboard/ownerHome'))
+              }
+              {
+                !isHouseOwner && ( navigate('/dashboard/houseRenter'))
+              }
             }
           });
         })

@@ -9,6 +9,8 @@ import OwnerHouse from "./../Pages/Dashboard/OwnerHouse/OwnerHouse";
 import AddHouse from "../Pages/Dashboard/AddHouse/AddHouse";
 import ManageHouse from "../Pages/Dashboard/ManageHouse/ManageHouse";
 import UpdateHouse from './../Pages/Dashboard/UpdateHouse/UpdateHouse';
+import AdminRoute from "./AdminRoute";
+import HouseRenter from './../Pages/Dashboard/HouseRenter/HouseRenter';
 
 const router = createBrowserRouter([
   {
@@ -35,20 +37,24 @@ const router = createBrowserRouter([
     children: [
       {
         path: "ownerHome",
-        element: <OwnerHouse></OwnerHouse>,
+        element: <AdminRoute><OwnerHouse></OwnerHouse></AdminRoute>,
       },
       {
         path: "addHouse",
-        element: <AddHouse></AddHouse>,
+        element:<AdminRoute> <AddHouse></AddHouse></AdminRoute>,
       },
       {
         path: "manageHouse",
-        element: <ManageHouse></ManageHouse>,
+        element: <AdminRoute><ManageHouse></ManageHouse></AdminRoute>,
       },
       {
         path: "update/:id",
-        element: <UpdateHouse></UpdateHouse>,
+        element: <AdminRoute><UpdateHouse></UpdateHouse></AdminRoute>,
         loader: ({ params }) =>fetch(`http://localhost:5000/menu/${params.id}`),
+      },
+      {
+        path: "houseRenter",
+        element:<HouseRenter></HouseRenter>,
       },
     ],
   },

@@ -1,13 +1,8 @@
 
 
 import {
-    FaAd,
-    FaEnvelope,
     FaHome,
     FaList,
-    FaSearch,
-    FaShoppingCart,
-    FaUsers,
     FaUtensils,
   } from "react-icons/fa";
   import { NavLink, Outlet } from "react-router-dom";
@@ -16,7 +11,8 @@ import useHouseOwner from "../Hooks/useHouseOwner";
 
   
   const Dashboard = () => {
-   const {isHouseOwner} = useHouseOwner();
+   const [isHouseOwner] = useHouseOwner();
+   console.log(isHouseOwner);
     
   
     return (
@@ -27,7 +23,7 @@ import useHouseOwner from "../Hooks/useHouseOwner";
             <span className="font-bold">House</span> <br /> Hunter
           </h1>
           <ul className="menu p-4">
-            {!isHouseOwner ? (
+            {isHouseOwner ? (
               <>
                 <li>
                   <NavLink to="/dashboard/ownerHome">
@@ -47,37 +43,13 @@ import useHouseOwner from "../Hooks/useHouseOwner";
                     Manage House
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink to="/dashboard/users">
-                    <FaUsers></FaUsers>
-                    All Users
-                  </NavLink>
-                </li>
               </>
             ) : (
               <>
                 <li>
-                  <NavLink to="/dashboard/userHome">
+                  <NavLink to="/dashboard/houseRenter">
                     <FaHome></FaHome>
                     User Home
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/cart">
-                    <FaShoppingCart></FaShoppingCart>
-                    My Cart 
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/review">
-                    <FaAd></FaAd>
-                    Add a Review
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink to="/dashboard/paymentHistory">
-                    <FaList></FaList>
-                    Payment History
                   </NavLink>
                 </li>
               </>
@@ -87,18 +59,6 @@ import useHouseOwner from "../Hooks/useHouseOwner";
               <NavLink to="/">
                 <FaHome></FaHome>
                 Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/order/salad">
-                <FaSearch></FaSearch>
-                Menu
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/contact">
-                <FaEnvelope></FaEnvelope>
-                Contact
               </NavLink>
             </li>
           </ul>
